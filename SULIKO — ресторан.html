@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SULIKO — грузинский ресторан</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf5ec;--surface:#f2e9d8;--text:#2b1a17;--muted:#6f5b54;--accent:#8c1c2b;--gold:#a8782a;--line:#e0d3bb;--on-accent:#fff;
+  color-scheme:light;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#1b0f10;--surface:#2a1819;--text:#f3e8d6;--muted:#b9a592;--accent:#c4344a;--gold:#d9a54b;--line:#3d2527;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#1b0f10;--surface:#2a1819;--text:#f3e8d6;--muted:#b9a592;--accent:#c4344a;--gold:#d9a54b;--line:#3d2527;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,Arial,sans-serif}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;margin:0;line-height:1.15}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:'Playfair Display',Georgia,serif;font-weight:700;letter-spacing:.22em;color:var(--accent);text-decoration:none;font-size:20px}
+nav{display:flex;gap:20px;font-size:14px}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--accent)}
+.btn{display:inline-block;background:var(--accent);color:var(--on-accent);padding:13px 26px;border-radius:999px;text-decoration:none;font-weight:500;border:0;cursor:pointer;font-size:15px}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--gold)}
+.hero{text-align:center;padding:96px 0 80px;background:radial-gradient(ellipse at 50% 0,var(--surface),var(--bg) 70%)}
+.hero small{color:var(--gold);letter-spacing:.3em;text-transform:uppercase;font-size:12px}
+.hero h1{font-size:clamp(48px,11vw,104px);letter-spacing:.14em;color:var(--accent);margin:16px 0}
+.hero p{max-width:540px;margin:0 auto 32px;color:var(--muted);font-size:18px}
+.hero .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+section{padding:72px 0}
+section h2{font-size:clamp(30px,5vw,42px);text-align:center;margin-bottom:12px}
+.sub{text-align:center;color:var(--muted);max-width:560px;margin:0 auto 40px}
+.orn{width:60px;height:2px;background:var(--gold);margin:0 auto 20px}
+.about{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px}
+.card h3{font-size:20px;margin-bottom:8px;color:var(--accent)}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.tabs{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.tab{background:transparent;color:var(--text);border:1px solid var(--line);padding:8px 18px;border-radius:999px;cursor:pointer;font:inherit;font-size:14px}
+.tab[aria-selected="true"]{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.menu{display:grid;gap:4px 40px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.item{padding:14px 0;border-bottom:1px dashed var(--line)}
+.item div{display:flex;justify-content:space-between;gap:12px;font-weight:500}
+.item b{color:var(--gold);white-space:nowrap}
+.item p{margin:2px 0 0;color:var(--muted);font-size:14px}
+.alt{background:var(--surface)}
+.info{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));text-align:center}
+.info h3{font-size:18px;color:var(--gold);margin-bottom:6px}
+.info p{margin:0;color:var(--muted)}
+footer{text-align:center;padding:28px 20px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+@media(max-width:640px){nav{display:none}.hero{padding:64px 0 56px}section{padding:52px 0}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#top">SULIKO</a>
+  <nav><a href="#about">О нас</a><a href="#menu">Меню</a><a href="#contacts">Контакты</a></nav>
+  <a class="btn" href="tel:+380000000000" style="padding:8px 18px;font-size:14px">Забронировать</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <small>Грузинская кухня и гостеприимство</small>
+  <h1>SULIKO</h1>
+  <p>«Сулико» — это «душа моя». Здесь вас встречают как родных: с горячим хачапури, ароматными хинкали и домашним вином.</p>
+  <div class="btns"><a class="btn" href="#menu">Смотреть меню</a><a class="btn ghost" href="#contacts">Забронировать стол</a></div>
+</div></div>
+
+<section id="about"><div class="wrap">
+  <h2>О ресторане</h2><div class="orn"></div>
+  <p class="sub">Рецепты, которые передаются из поколения в поколение, свежие продукты и настоящий грузинский стол — для компании друзей, семьи и особых вечеров.</p>
+  <div class="about">
+    <div class="card"><h3>Настоящий вкус</h3><p>Имеретинский сыр, свежая кинза, грецкие орехи и специи — всё как в Грузии.</p></div>
+    <div class="card"><h3>Живой огонь</h3><p>Шашлык и мцвади готовим на углях, а хлеб печём в тоне каждый день.</p></div>
+    <div class="card"><h3>Грузинские вина</h3><p>Саперави, Ркацители, Киндзмараули — подберём бутылку под ваше блюдо.</p></div>
+  </div>
+</div></section>
+
+<section id="menu" class="alt"><div class="wrap">
+  <h2>Меню</h2><div class="orn"></div>
+  <p class="sub">Избранные блюда нашей кухни.</p>
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div class="menu" id="menu-list"></div>
+</div></section>
+
+<section id="contacts"><div class="wrap">
+  <h2>Контакты</h2><div class="orn"></div>
+  <p class="sub">Будем рады видеть вас. Столы лучше бронировать заранее, особенно на выходные.</p>
+  <div class="info">
+    <div><h3>Адрес</h3><p>ул. Ваша, 1<br>(укажите свой адрес)</p></div>
+    <div><h3>Часы работы</h3><p>Пн–Чт: 12:00–23:00<br>Пт–Вс: 12:00–01:00</p></div>
+    <div><h3>Телефон</h3><p><a href="tel:+380000000000">+38 (000) 000-00-00</a></p></div>
+  </div>
+  <p style="text-align:center;margin-top:36px"><a class="btn" href="tel:+380000000000">Позвонить и забронировать</a></p>
+</div></section>
+</main>
+
+<footer>© 2026 SULIKO. Все права защищены.</footer>
+
+<script>
+const data={
+"Закуски":[["Пхали","Рулетики из шпината и свеклы с грецким орехом",160],["Сулугуни на углях","Копчёный сыр с зеленью",190],["Баклажаны с орехами","Нигвзиани бадриджани",180],["Лобио в горшочке","Красная фасоль с кинзой и специями",150]],
+"Горячее":[["Хинкали (5 шт.)","Сочные, с говядиной и свининой",220],["Чахохбили","Курица, тушёная с томатами и травами",290],["Мцвади","Шашлык из шеи свинины на углях",340],["Чанахи","Баранина с овощами в глиняном горшочке",360]],
+"Хачапури":[["По-аджарски","Лодочка с сыром, желтком и маслом",250],["Имеретинский","Закрытый, с имеретинским сыром",210],["По-мегрельски","С сыром внутри и сверху",260],["Лобиани","Пирог с фасолью",190]],
+"Напитки":[["Саперави (бокал)","Красное сухое, Кахетия",140],["Ркацители (бокал)","Белое, янтарное",130],["Тархун","Домашний лимонад с эстрагоном",90],["Чача","Домашняя, 50 мл",110]]
+};
+const tabs=document.getElementById('tabs'),list=document.getElementById('menu-list');
+function show(cat){
+  [...tabs.children].forEach(b=>b.setAttribute('aria-selected',b.textContent===cat));
+  list.innerHTML=data[cat].map(i=>`<div class="item"><div><span>${i[0]}</span><b>${i[2]} ₴</b></div><p>${i[1]}</p></div>`).join('');
+}
+Object.keys(data).forEach(c=>{const b=document.createElement('button');b.className='tab';b.role='tab';b.textContent=c;b.onclick=()=>show(c);tabs.appendChild(b)});
+show('Закуски');
+</script>
+</body>
+</html>
